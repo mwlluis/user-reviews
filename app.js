@@ -47,14 +47,47 @@ const prevBtn = document.querySelector(".prev-btn")
 const nextBtn = document.querySelector(".next-btn")
 const randomBtn = document.querySelector(".random-btn")
 
-// set starting item
+// intial review
 let currentItem = 0
 
-// load initial item
+// load initial review
 if (document.readyState !== 'loading') {
+  showPerson()
+}
+
+// how a review gets displayed
+
+function showPerson() {
   const item = reviews[currentItem] 
   img.src = item.img
   author.textContent = item.name
   job.textContent = item.job
   info.textContent = item.text
 }
+
+// show next review
+
+nextBtn.addEventListener('click', () => {
+  currentItem++;
+  if (currentItem > reviews.length - 1) {
+    currentItem = 0
+  }
+  showPerson()
+})
+
+// show previous review
+
+prevBtn.addEventListener('click', () => {
+  currentItem--
+  if (currentItem < 0) {
+    currentItem = reviews.length - 1
+  }
+  showPerson()
+})
+
+randomBtn.addEventListener('click', () => {
+  let randomInt = Math.floor(Math.random() * 4)
+  console.log(randomInt)
+  currentItem = randomInt
+  showPerson()
+})
