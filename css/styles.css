@@ -270,3 +270,17 @@ main {
   background: var(--clr-primary-5);
   color: var(--clr-primary-1);
 }
+
+/* search bar styling */
+
+.search-wrapper {
+  font-family: var(--ff-primary);
+  display: flex;
+  /* flex-direction: column; */
+  gap: .25rem;
+  padding: 0rem 1rem 1rem 1rem;
+}
+
+input {
+  font-size: 1 rem;
+}

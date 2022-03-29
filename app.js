@@ -1,3 +1,7 @@
+const searchInput = document.querySelector("[data-search]")
+
+
+
 // local reviews data
 const reviews = [
   {
@@ -90,4 +94,20 @@ randomBtn.addEventListener('click', () => {
   console.log(randomInt)
   currentItem = randomInt
   showPerson()
+})
+
+
+
+// search bar function
+
+searchInput.addEventListener("input", (e) => {
+  const value = e.target.value.toLowerCase()
+
+  reviews.forEach(review => {
+    if (value ===  review.job) {
+      let position = review.id - 1
+      currentItem = position
+      showPerson()
+    } 
+})
 })
