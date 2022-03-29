@@ -90,9 +90,7 @@ prevBtn.addEventListener('click', () => {
 })
 
 randomBtn.addEventListener('click', () => {
-  let randomInt = Math.floor(Math.random() * 4)
-  console.log(randomInt)
-  currentItem = randomInt
+  currentItem = Math.floor(Math.random() * reviews.length)
   showPerson()
 })
 
